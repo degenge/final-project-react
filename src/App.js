@@ -1,6 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import {VectorMap} from "react-jvectormap"
+import {VectorMap} from "react-jvectormap";
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import {useState} from "react";
 
 function MyVerticallyCenteredModal(props) {
     return (
@@ -38,7 +41,7 @@ function App() {
 
     fetch(API + COUNTRY_GET_LIST)
         .then(response => response.json())
-        .then(data => console.log(data));
+        // .then(data => console.log(data));
 
     const mapData = {
         CN: 100000,
@@ -52,10 +55,9 @@ function App() {
     };
 
     const handleClick = (e, countryCode) => {
-        console.log(countryCode);
-        alert(countryCode);
 
     };
+
 
     const Map = () => {
         return (
@@ -102,7 +104,7 @@ function App() {
         );
     };
 
-    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = useState(false);
 
     return (
 
@@ -125,7 +127,7 @@ function App() {
                         width: "100%",
                         height: "520px"
                     }}
-                    onRegionClick={handleClick} //gets the country code
+                    onRegionClick={() => setModalShow(true)} //gets the country code
                     containerClassName="map"
                     regionStyle={{
                         initial: {
