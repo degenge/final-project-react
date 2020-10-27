@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Travel Keep
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Travel keep is all about saving your travel memories. The user will have the opportunity to select which countries he/she has been in the world on a map. When you click a country you will see some basic information . And if you want the whole story you can click on “More” to see the whole blogpost about that country on a new page.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+These instructions can be found [here](https://github.com/becodeorg/gnt-yu-3-21/tree/master/3.The-Mountain/9.Final-Project)
 
-### `yarn start`
+### Briefing
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Briefing](https://docs.google.com/document/d/1A9RtOl7TVwFKWtG_Vr7gILRT4ORQJ2Wpm9AmxtfZIwo/edit?usp=sharing)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Wireframes
 
-### `yarn test`
+[See wireframes](https://xd.adobe.com/view/1293e652-f2ce-490e-b476-d2b7d9314c36-47c0/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Design
 
-### `yarn build`
+For the time being this is the design, it's possible that there will be changes.
+[See design](https://xd.adobe.com/view/9e8d63b1-45a4-4b25-b1d4-7b7a8f63d30f-cbde/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Built With
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [bootstrap](https://getbootstrap.com/)
+- [React](https://reactjs.org/)
+- [Symfony](https://symfony.com/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Authors
 
-### `yarn eject`
+- **Gerrit** - _dev @becode_ - [github](https://github.com/degenge)
+- **Bas** - _dev @becode_ - [github](https://github.com/basmahieu)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## License
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under Becode - Yu License
