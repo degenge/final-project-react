@@ -4,41 +4,35 @@ import {VectorMap} from "react-jvectormap";
 import MapModul from './MapModul';
 
 
-
 export default function Map() {
-
-    
-   
-    const API = 'http://final-project-api.localhost/index.php/'; 
+    // const API = 'http://final-project-api.localhost/index.php/';
+    const API = 'http://bc_final-project-api/index.php/';
     const COLOR_VISITED = 'visit/api/'
 
-    let mapData = [];
+    // let mapDataTemp = {};
+    // fetch(API + COLOR_VISITED)
+    //     .then(response => response.json())
+    //     .then(data => mapDataTemp = data);
+    // console.log('mapDataTemp', mapDataTemp);
 
-        fetch(API + COLOR_VISITED)
-        .then(response => response.json())
-        .then(data => {
+    const mapData = async () => {
+        const response = await fetch(API + COLOR_VISITED);
+        const json = await response.json();
+        console.log(json);
+    }
 
-
-            // console.log(data);
-            data.forEach(function (country) {
-                // console.log(country.code);
-                mapData.push(country.code.toUpperCase() +":0,");
-            });
-        })
-
-    console.log(mapData);
 
     // const mapData = {
-    //     CN:0,
-    //     RU:0,
+    //     CN: 0,
+    //     RU: 0,
     // };
+    // console.log(mapData);
 
     const [modalShow, setModalShow] = useState(false);
 
-    
     return (
         <>
-         {/* <Button variant="primary" onClick={() => setModalShow(true)}>
+            {/* <Button variant="primary" onClick={() => setModalShow(true)}>
                 Launch vertically centered modal
             </Button> */}
 
@@ -47,7 +41,7 @@ export default function Map() {
                 onHide={() => setModalShow(false)}
             />
 
-            <div  class="map">
+            <div className="map" >
                 <VectorMap
                     map={"world_mill"}
                     backgroundColor="#f8f5ee" //change it to ocean blue: #0077be
@@ -79,7 +73,7 @@ export default function Map() {
                     series={{
                         regions: [
                             {
-                                values: mapData, //this is your data
+                                values: mapData(), //this is your data
                                 scale: ["#ef7670"], //your color game's here
                                 normalizeFunction: "polynomial"
                             }

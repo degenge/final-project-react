@@ -6,7 +6,7 @@ export default function Explore() {
     return (
     <>
         <Header />
-        <div class="mapContainer">
+        <div className="mapContainer">
         <Map />
         </div>
     </>
