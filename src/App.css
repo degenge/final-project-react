@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;800&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap");
+
+html {
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Alegreya", serif;
+  background-color: #386980;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav {
+  height: 48px;
+  background-color: #1c3147;
+  padding-top: 8px;
+  padding-left: 40%;
+}
+.logo {
+  background-image: url(logo.svg);
+  background-repeat: no-repeat;
+  background-size: 160px;
+  height: 48px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h1 {
+  font-size: 68px;
+  font-weight: 600;
+  letter-spacing: 6px;
+  line-height: 70px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+p {
+  font-family: "lato";
+  font-size: 20px;
+  font-weight: 300;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+  background-image: url(./assets/img/hero-img.png);
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+}
+
+.btn-primary {
+  font-weight: 600;
+  background-color: tomato;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.btn-primary:hover {
+  background-color: rgb(254, 131, 109);
+}
+
+.btn-primary:focus {
+  background-color: rgb(255, 58, 23);
+}
+
+.btn-primary:active {
+  background-color: rgb(255, 58, 23);
+}
+
+.container {
+  margin-top: 25%;
+  margin-bottom: auto;
+}
+
+.mapContainer {
+  padding-top: 5%;
+  background-color: #f8f5ee;
 }
