@@ -1,68 +1,48 @@
 import React from 'react';
 import {useState} from "react";
-
 import {VectorMap} from "react-jvectormap";
-import {Button ,Modal} from 'react-bootstrap';
+import MapModul from './MapModul';
 
 
-function MyVerticallyCenteredModal(props) {
-    return (
-        <Modal
-            {...props}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-        >
-            <Modal.Header closeButton >
-                <Modal.Title id="contained-modal-title-vcenter" >
-                    Modal heading
-                </Modal.Title >
-            </Modal.Header >
-            <Modal.Body >
-                <h4 >Centered Modal</h4 >
-                <p >
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                    consectetur ac, vestibulum at eros.
-                </p >
-            </Modal.Body >
-            <Modal.Footer >
-                <Button onClick={props.onHide} >Close</Button >
-            </Modal.Footer >
-        </Modal >
-    );
-}
 
 export default function Map() {
 
     
+   
     const API = 'http://final-project-api.localhost/index.php/'; 
-    const COUNTRY_GET_LIST = 'country/api';
-    const COLOR_VISITED = '';
+    const COLOR_VISITED = 'visit/api/'
 
-    fetch(API + COUNTRY_GET_LIST)
+    let mapData = [];
+
+        fetch(API + COLOR_VISITED)
         .then(response => response.json())
-        // .then(data => console.log(data));
+        .then(data => {
 
-    const mapData = {
-        // CN: 0,
-        // IN: 0,
-        // SA: 0,
-        // EG: 50000,
-        // SE: 30000,
-        // FI: 20000,
-        // FR: 10000,
-        // US: 0
-    };
+
+            // console.log(data);
+            data.forEach(function (country) {
+                // console.log(country.code);
+                mapData.push(country.code.toUpperCase() +":0,");
+            });
+        })
+
+    console.log(mapData);
+
+    // const mapData = {
+    //     CN:0,
+    //     RU:0,
+    // };
+
     const [modalShow, setModalShow] = useState(false);
 
+    
     return (
         <>
          {/* <Button variant="primary" onClick={() => setModalShow(true)}>
                 Launch vertically centered modal
             </Button> */}
 
-            <MyVerticallyCenteredModal
+            <MapModul
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
@@ -100,7 +80,7 @@ export default function Map() {
                         regions: [
                             {
                                 values: mapData, //this is your data
-                                scale: ["#ef7670", "#2938bc"], //your color game's here
+                                scale: ["#ef7670"], //your color game's here
                                 normalizeFunction: "polynomial"
                             }
                         ]
