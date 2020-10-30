@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useState} from "react";
 import {VectorMap} from "react-jvectormap";
 import MapModul from './MapModul';
@@ -9,23 +9,24 @@ export default function Map() {
     const API = 'http://bc_final-project-api/index.php/';
     const COLOR_VISITED = 'visit/api/'
 
-    // let mapDataTemp = {};
-    // fetch(API + COLOR_VISITED)
-    //     .then(response => response.json())
-    //     .then(data => mapDataTemp = data);
-    // console.log('mapDataTemp', mapDataTemp);
+    const initialMapData = {};
+    const [mapData, setMapData] = useState(initialMapData);
+    useEffect(() => {
+        const tempMapData = async () => {
+            const response = await fetch(API + COLOR_VISITED);
+            const json = await response.json();
+            // this.setState({ data: json });
+            return json;
+        }
+        let mapData = tempMapData();
+        console.log('test', mapData);
+        setMapData(mapData);
+    }, [])
 
-    const mapData = async () => {
-        const response = await fetch(API + COLOR_VISITED);
-        const json = await response.json();
-        console.log(json);
-    }
-
-
-    // const mapData = {
-    //     CN: 0,
-    //     RU: 0,
-    // };
+    const mapDataTemp = {
+        CN: 0,
+        RU: 0,
+    };
     // console.log(mapData);
 
     const [modalShow, setModalShow] = useState(false);
@@ -73,7 +74,7 @@ export default function Map() {
                     series={{
                         regions: [
                             {
-                                values: mapData(), //this is your data
+                                values: mapData, //this is your data
                                 scale: ["#ef7670"], //your color game's here
                                 normalizeFunction: "polynomial"
                             }
