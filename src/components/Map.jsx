@@ -4,8 +4,8 @@ import {VectorMap} from "react-jvectormap";
 import MapModul from './MapModul';
 import {useAsync} from 'react-async';
 
-// const API = 'http://final-project-api.localhost/index.php/';
-const API = 'http://bc_final-project-api/index.php/';
+const API = 'http://final-project-api.localhost/index.php/';
+// const API = 'http://bc_final-project-api/index.php/';
 const COLOR_VISITED = 'visit/api/'
 
 const loadVisits = async () =>

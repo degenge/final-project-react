@@ -31,6 +31,29 @@ h1 {
   color: white;
 }
 
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: tomato;
+}
+
+h4 {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 6px;
+  color: #1c3147;
+}
+
+h5 {
+  font-family: "lato";
+  margin-top: 56px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #285a90;
+}
+
 p {
   font-family: "lato";
   font-size: 20px;
