@@ -2,34 +2,31 @@ import React, {useEffect} from 'react';
 import {useState} from "react";
 import {VectorMap} from "react-jvectormap";
 import MapModul from './MapModul';
+import {useAsync} from 'react-async';
 
+// const API = 'http://final-project-api.localhost/index.php/';
+const API = 'http://bc_final-project-api/index.php/';
+const COLOR_VISITED = 'visit/api/'
+
+const loadVisits = async () =>
+    await fetch(API + COLOR_VISITED)
+        .then(res => (res.ok ? res : Promise.reject(res)))
+        .then(res => res.json())
 
 export default function Map() {
-    // const API = 'http://final-project-api.localhost/index.php/';
-    const API = 'http://bc_final-project-api/index.php/';
-    const COLOR_VISITED = 'visit/api/'
 
-    const initialMapData = {};
-    const [mapData, setMapData] = useState(initialMapData);
-    useEffect(() => {
-        const tempMapData = async () => {
-            const response = await fetch(API + COLOR_VISITED);
-            const json = await response.json();
-            // this.setState({ data: json });
-            return json;
-        }
-        let mapData = tempMapData();
-        console.log('test', mapData);
-        setMapData(mapData);
-    }, [])
-
-    const mapDataTemp = {
-        CN: 0,
-        RU: 0,
-    };
+    // const mapDataTemp = {
+    //     CN: 0,
+    //     RU: 0,
+    // };
     // console.log(mapData);
 
     const [modalShow, setModalShow] = useState(false);
+
+    const { data, error, isLoading } = useAsync({ promiseFn: loadVisits })
+    if (isLoading) return "Loading..."
+    if (error) return `Something went wrong: ${error.message}`
+    if (data)
 
     return (
         <>
@@ -74,7 +71,7 @@ export default function Map() {
                     series={{
                         regions: [
                             {
-                                values: mapData, //this is your data
+                                values: data, //this is your data
                                 scale: ["#ef7670"], //your color game's here
                                 normalizeFunction: "polynomial"
                             }
